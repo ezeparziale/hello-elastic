@@ -18,7 +18,12 @@ http://localhost:5601
 
 ## Querys
 
-### Create index
+Se pueden correr en la consola para devs:  
+```
+http://localhost:5601/app/dev_tools#/console
+```
+
+### INDEX
 
 ```
 PUT jugadores 
