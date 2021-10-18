@@ -21,7 +21,7 @@ docker-compose -f "docker-compose_secutity.yaml" up -d
 
 ## WebUI
 
-```url
+```http
 http://localhost:5601
 ```
 
@@ -29,7 +29,7 @@ http://localhost:5601
 
 Se pueden correr en la consola para devs:  
 
-```url
+```http
 http://localhost:5601/app/dev_tools#/console
 ```
 
@@ -147,6 +147,6 @@ DELETE /jugadores/_doc/2
 
 ## Info API
 
-```url
+```http
 https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html
 ```
