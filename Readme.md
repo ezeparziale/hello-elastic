@@ -35,7 +35,7 @@ http://localhost:5601/app/dev_tools#/console
 
 ### INDEX
 
-```code
+```json
 PUT jugadores 
 {
    "mappings":{
