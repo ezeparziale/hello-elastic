@@ -1,13 +1,22 @@
 # Demo elastic search y Kibana
 
 Versiones:
+
 * Elastic: 7.15.0
 * Kibana: 7.15.0
 
 ## Run
 
+Para version simple sin autenticación:
+
+```docker
+docker-compose -f "docker-compose_simple.yaml" up -d
 ```
-docker-compose up -d
+
+Para version simple con autenticación (pide usuario y contraseña):
+
+```docker
+docker-compose -f "docker-compose_secutity.yaml" up -d
 ```
 
 ## WebUI
@@ -19,13 +28,14 @@ http://localhost:5601
 ## Querys
 
 Se pueden correr en la consola para devs:  
-```
+
+```url
 http://localhost:5601/app/dev_tools#/console
 ```
 
 ### INDEX
 
-```
+```code
 PUT jugadores 
 {
    "mappings":{
@@ -44,7 +54,7 @@ PUT jugadores
 
 ### POST
 
-```
+```code
 POST /jugadores/_doc/1
 {
   "nombre": "Ronaldo",
@@ -52,7 +62,7 @@ POST /jugadores/_doc/1
 }
 ```
 
-```
+```code
 POST /jugadores/_doc/2
 {
   "nombre": "Haaland",
@@ -60,7 +70,7 @@ POST /jugadores/_doc/2
 }
 ```
 
-```
+```code
 POST /jugadores/_doc/3
 {
   "nombre": "Messi",
@@ -70,13 +80,13 @@ POST /jugadores/_doc/3
 
 ### GET
 
-```
+```code
 GET /jugadores/_doc/3
 ```
 
 ### UPDATE
 
-```
+```code
 POST /jugadores/_update/3
 { 
   "doc":
@@ -86,7 +96,7 @@ POST /jugadores/_update/3
 
 ### GET ALL
 
-```
+```code
 GET /jugadores/_search
 {
   "query": {
@@ -101,7 +111,7 @@ GET /jugadores/_search
 
 ### BULK
 
-```
+```code
 POST /_bulk
 { "index":{"_index": "jugadores", "_id": 4} }
 { "nombre":"De Bruyne", "club": "Manchester City" }
@@ -111,7 +121,7 @@ POST /_bulk
 
 ### FILTER
 
-```
+```code
 GET /jugadores/_search
 {
   "query": {
@@ -131,7 +141,7 @@ GET /jugadores/_search
 
 ### DELETE
 
-```
+```code
 DELETE /jugadores/_doc/2
 ```
 
