@@ -16,7 +16,7 @@ docker-compose -f "docker-compose_simple.yaml" up -d
 Para version simple con autenticación (pide usuario y contraseña):
 
 ```dockerfile
-docker-compose -f "docker-compose_secutity.yaml" up -d
+docker-compose -f "docker-compose_security.yaml" up -d
 ```
 
 ## WebUI
