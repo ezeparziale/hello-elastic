@@ -1,39 +1,76 @@
-# 📊 Demo elastic search y Kibana
+# :cyclone: Demo elastic search and Kibana
 
-Versiones:
+Demo with elastic search and kibana.  
+Both versions with docker.
 
-* Elastic: 7.15.0
-* Kibana: 7.15.0
+Versions:
 
-## 🏃‍♂️ Run
+* Elastic: 8.5.1
+* Kibana: 8.5.1
 
-Para version simple sin autenticación:
+## :runner: Run
+
+### :unlock: Mode simple without authentication
+
+1. Only run the docker compose
 
 ```dockerfile
 docker-compose -f "docker-compose_simple.yaml" up -d
 ```
 
-Para version simple con autenticación (pide usuario y contraseña):
-
-```dockerfile
-docker-compose -f "docker-compose_security.yaml" up -d
-```
-
-## 🗺️ WebUI
+2. Go to kibana host
 
 ```http
 http://localhost:5601
 ```
 
-## 💬 Querys
+### :closed_lock_with_key: Mode simple with authentication
 
-Se pueden correr en la consola para devs:  
+1. Run the docker compose
+
+```dockerfile
+docker-compose -f "docker-compose_security.yaml" up -d
+```
+
+2. Go to elastic terminal in docker image and run the command:
+
+```bash
+elasticsearch-create-enrollment-token -s kibana
+```
+
+3. Go to kibana host
+
+```http
+http://localhost:5601
+```
+
+4. Paste the code from step 2
+5. Enter the code from kibana terminal in docker image
+6. Kibana and elastic are ready
+
+## :link: Urls
+
+* Kibana
+
+```http
+http://localhost:5601
+```
+
+* Elastic
+
+```http
+http://localhost:9200
+```
+
+## :notebook: Querys
+
+Run queries in kibana console
 
 ```http
 http://localhost:5601/app/dev_tools#/console
 ```
 
-### ◽ INDEX
+### INDEX
 
 ```json
 PUT jugadores 
@@ -52,7 +89,7 @@ PUT jugadores
 }
 ```
 
-### ◽ POST
+### POST
 
 ```json
 POST /jugadores/_doc/1
@@ -78,13 +115,13 @@ POST /jugadores/_doc/3
 }
 ```
 
-### ◽ GET
+### GET
 
 ```json
 GET /jugadores/_doc/3
 ```
 
-### ◽ UPDATE
+### UPDATE
 
 ```json
 POST /jugadores/_update/3
@@ -94,7 +131,7 @@ POST /jugadores/_update/3
 }
 ```
 
-### ◽ GET ALL
+### GET ALL
 
 ```json
 GET /jugadores/_search
@@ -109,7 +146,7 @@ GET /jugadores/_search
 }
 ```
 
-### ◽ BULK
+### BULK
 
 ```json
 POST /_bulk
@@ -119,7 +156,7 @@ POST /_bulk
 { "nombre":"Lewandowski", "club": "Bayern de Múnich" }
 ```
 
-### ◽ FILTER
+### FILTER
 
 ```json
 GET /jugadores/_search
@@ -139,13 +176,13 @@ GET /jugadores/_search
 }
 ```
 
-### ◽ DELETE
+### DELETE
 
 ```json
 DELETE /jugadores/_doc/2
 ```
 
-## 📚 Info API
+## :books: Info API
 
 ```http
 https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html
