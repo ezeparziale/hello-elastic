@@ -1,11 +1,11 @@
-# Demo elastic search y Kibana
+# 📊 Demo elastic search y Kibana
 
 Versiones:
 
 * Elastic: 7.15.0
 * Kibana: 7.15.0
 
-## Run
+## 🏃‍♂️ Run
 
 Para version simple sin autenticación:
 
@@ -19,13 +19,13 @@ Para version simple con autenticación (pide usuario y contraseña):
 docker-compose -f "docker-compose_security.yaml" up -d
 ```
 
-## WebUI
+## 🗺️ WebUI
 
 ```http
 http://localhost:5601
 ```
 
-## Querys
+## 💬 Querys
 
 Se pueden correr en la consola para devs:  
 
@@ -33,7 +33,7 @@ Se pueden correr en la consola para devs:
 http://localhost:5601/app/dev_tools#/console
 ```
 
-### INDEX
+### ◽ INDEX
 
 ```json
 PUT jugadores 
@@ -52,7 +52,7 @@ PUT jugadores
 }
 ```
 
-### POST
+### ◽ POST
 
 ```json
 POST /jugadores/_doc/1
@@ -78,13 +78,13 @@ POST /jugadores/_doc/3
 }
 ```
 
-### GET
+### ◽ GET
 
 ```json
 GET /jugadores/_doc/3
 ```
 
-### UPDATE
+### ◽ UPDATE
 
 ```json
 POST /jugadores/_update/3
@@ -94,7 +94,7 @@ POST /jugadores/_update/3
 }
 ```
 
-### GET ALL
+### ◽ GET ALL
 
 ```json
 GET /jugadores/_search
@@ -109,7 +109,7 @@ GET /jugadores/_search
 }
 ```
 
-### BULK
+### ◽ BULK
 
 ```json
 POST /_bulk
@@ -119,7 +119,7 @@ POST /_bulk
 { "nombre":"Lewandowski", "club": "Bayern de Múnich" }
 ```
 
-### FILTER
+### ◽ FILTER
 
 ```json
 GET /jugadores/_search
@@ -139,13 +139,13 @@ GET /jugadores/_search
 }
 ```
 
-### DELETE
+### ◽ DELETE
 
 ```json
 DELETE /jugadores/_doc/2
 ```
 
-## Info API
+## 📚 Info API
 
 ```http
 https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html
